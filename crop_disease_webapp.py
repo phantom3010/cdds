@@ -25,7 +25,7 @@ st.write("Upload an image of a crop leaf, and the AI model will predict the dise
 uploaded_file = st.file_uploader("Choose a leaf image", type=["jpg", "png", "jpeg"])
 
 if uploaded_file is not None:
-    image = Image.open(uploaded_file)
+    image = Image.open(uploaded_file).convert("RGB")
     st.image(image, caption='Uploaded Leaf Image', use_column_width=True)
 
     # Preprocess image
